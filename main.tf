@@ -133,8 +133,6 @@ resource "google_compute_instance" "indynode" {
   # }
 
 
-
-
   deletion_protection       = var.deletion_protection
   allow_stopping_for_update = true
 }
