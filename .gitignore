@@ -1,2 +1,5 @@
 *.tfstate
 **/.terraform/*
+*.terraform.lock.hcl
+/.pre-commit-config.yaml
+**/terraform.tfvars

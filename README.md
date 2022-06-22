@@ -1,9 +1,22 @@
+## Notes
+You need to have deployed a Snapshot Schedule before launching this module(see example in the example folder)
+
+SSH keys can be added GCP project wide with *resource "google_compute_project_metadata"* before calling the module, like this
+
+```
+resource "google_compute_project_metadata" "default" {
+  for_each = toset(["user:${file("./files/pubkey.pem.pub")}"])
+  project  = data.google_project.gpc_indy_node.number
+  metadata = {
+    ssh-keys = each.value
+  }
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
-You need to have deployed a Snapshot Schedule before launching this module(example coming soon)
 
-SSH keys can be added project wide with *resource "google_compute_project_metadata"* before calling the module but looking for a way to do it within the module
-
+No requirements.
 
 ## Providers
 
