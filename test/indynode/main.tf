@@ -19,7 +19,7 @@ resource "google_compute_resource_policy" "snappolicy" {
 
 
 module "gpc_indy_node" {
-  source = "../../"
+  source = "https://github.com/kinwolfqc/terraform-google-indy-node.git?ref=test-pipeline"
 
   count                         = 2
   vpc_node_subnet_cidr          = "10.0.1.0/24"
