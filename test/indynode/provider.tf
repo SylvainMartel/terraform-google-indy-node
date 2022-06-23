@@ -18,7 +18,7 @@ terraform {
     }
   }
 }
-
+#
 provider "google" {
   # Configuration options
   region  = var.gcp_candy_region
