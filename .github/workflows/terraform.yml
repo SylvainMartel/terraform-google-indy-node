@@ -14,7 +14,6 @@ jobs:
       run:
         working-directory: test/indynode
     steps:
-      
       - uses: 'actions/checkout@v3'
       
       - name: Authenticate to Google Cloud
