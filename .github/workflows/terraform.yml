@@ -14,15 +14,13 @@ jobs:
       run:
         working-directory: test/indynode
     steps:
-      - uses: 'actions/checkout@v3'
-      
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v0
         with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
-
-      - name: Checkout
-        uses: actions/checkout@v3
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
