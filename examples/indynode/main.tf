@@ -30,5 +30,5 @@ module "gpc_indy_node" {
   os_image                      = data.google_compute_image.ubuntu.id
   snapshot_schedule_policy_name = google_compute_resource_policy.snappolicy.name
   ssh_firewall_allow_range      = ["0.0.0.0/0"]
-  deletion_protection           = false
+  deletion_protection           = false # <<---- change to true for production nodes
 }
