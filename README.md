@@ -3,7 +3,7 @@ You need to have deployed a Snapshot Schedule before launching this module(see e
 
 SSH keys can be added GCP project wide with *resource "google_compute_project_metadata"* before calling the module, like this
 
-```
+```hcl
 resource "google_compute_project_metadata" "default" {
   for_each = toset(["user:${file("./files/pubkey.pem.pub")}"])
   project  = data.google_project.gpc_indy_node.number
@@ -15,7 +15,7 @@ resource "google_compute_project_metadata" "default" {
 
 # Usage
 
-````hcl
+```hcl
 module "gpc_indy_node" {
   source = "github.com/CQEN-QDCE/terraform-google-indy-node"
 
@@ -30,7 +30,7 @@ module "gpc_indy_node" {
   ssh_firewall_allow_range      = ["0.0.0.0/0"]
   deletion_protection           = false
 }
-````
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
